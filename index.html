@@ -24,7 +24,6 @@
     </nav>
 </header>
 
-<!-- HOME -->
 <section id="home" class="home">
 
     <div class="home-sci">
@@ -49,7 +48,6 @@
         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dionido.ryan@gmail.com" class="btn">Hire Me</a>
     </div>
 
-    <!-- ORIGINAL CIRCLE STRUCTURE -->
     <div class="home-img">
         <div class="glowing-circle">
             <span></span>
@@ -76,6 +74,8 @@ window.addEventListener('scroll', () => {
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
+
         if (pageYOffset >= sectionTop) {
             current = section.getAttribute("id");
         }

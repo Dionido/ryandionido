@@ -159,7 +159,7 @@ section {
 
   .home { flex-direction: column; text-align: center; padding-top: 150px; }
   .home-content { max-width: 100%; }
-  .home-content h1 { font-size: 34px; }
+  .home-content h1 { font-size: 30px; }
   .home-content h3 { font-size: 22px; }
   .home-img { width: 280px; height: 280px; margin-top: 40px; }
   .home-img .glowing-circle::after { width: 250px; height: 250px; }

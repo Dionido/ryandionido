@@ -15,7 +15,12 @@
   <!-- HEADER -->
   <header class="header">
     <a href="#home" class="logo">Portfolio.</a>
-    <nav class="navbar">
+
+    <div class="menu-toggle" id="menu-toggle">
+      <i class='bx bx-menu'></i>
+    </div>
+
+    <nav class="navbar" id="navbar">
       <a href="#home" class="active">Home</a>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -27,7 +32,7 @@
   <!-- HOME SECTION -->
   <section id="home" class="home">
     <div class="home-sci">
-      <a href="mailto:dionido.ryan@gmail.com"><i class='bx bxl-gmail'></i></a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dionido.ryan@gmail.com"><i class='bx bxl-gmail'></i></a>
       <a href="https://www.linkedin.com/in/ryan-dionido/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
       <a href="https://github.com/" target="_blank"><i class='bx bxl-github'></i></a>
     </div>
@@ -36,14 +41,14 @@
       <h1>Hi, I'm Ryan Dionido</h1>
       <h3>IT Infrastructure</h3>
       <p>
-            As a passionate IT Infrastructure professional with a keen eye for detail
-            and a results-driven approach, I am eager to bring my 10 years of experience
-            to a role where I can make a meaningful impact. With a deep understanding of
-            network and system administration, and cybersecurity, I am confident in my ability
-            to design and implement cutting-edge solutions that drive efficiency, 
-            enhance security, and optimize performance. My goal is to create a reliable,
-            scalable infrastructure that supports the organization's strategic objectives while
-            exceeding customer expectations.
+       As a passionate IT Infrastructure professional with a keen eye for detail
+       and a results-driven approach, I am eager to bring my 10 years of experience
+       to a role where I can make a meaningful impact. With a deep understanding of
+       network and system administration, and cybersecurity, I am confident in my ability
+       to design and implement cutting-edge solutions that drive efficiency,
+       enhance security, and optimize performance. My goal is to create a reliable,
+       scalable infrastructure that supports the organization's strategic objectives while
+       exceeding customer expectations.
       </p>
       <a href="https://mail.google.com/mail/?view=cm&fs=1&to=dionido.ryan@gmail.com" class="btn">Hire Me</a>
     </div>
@@ -98,16 +103,19 @@
     </div>
   </section>
 
-  <!-- ACTIVE TAB SCRIPT -->
+  <!-- SCRIPT -->
   <script>
     const navLinks = document.querySelectorAll('.navbar a');
     const sections = document.querySelectorAll('section');
+    const menuToggle = document.getElementById('menu-toggle');
+    const navbar = document.getElementById('navbar');
 
+    // Scroll-based active tab
     window.addEventListener('scroll', () => {
       let scrollY = window.pageYOffset;
 
       sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100; // header height offset
+        const sectionTop = section.offsetTop - 100; // header offset
         const sectionHeight = section.offsetHeight;
 
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
@@ -118,11 +126,22 @@
       });
     });
 
+    // Click-based active tab
     navLinks.forEach(link => {
       link.addEventListener('click', () => {
         navLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
+
+        // Close mobile menu on click
+        if(window.innerWidth <= 768){
+          navbar.classList.remove('open');
+        }
       });
+    });
+
+    // Hamburger toggle
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('open');
     });
   </script>
 

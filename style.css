@@ -19,8 +19,6 @@ body {
 /* HEADER */
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     padding: 20px 10%;
     display: flex;
@@ -82,7 +80,6 @@ section {
     margin: 20px 0 40px;
 }
 
-/* BUTTON */
 .btn {
     display: inline-flex;
     justify-content: center;
@@ -111,7 +108,7 @@ section {
     text-decoration: none;
 }
 
-/* EXACT ORIGINAL CIRCLE SIZE */
+/* CIRCLE */
 .home-img {
     width: 410px;
     height: 410px;
@@ -171,4 +168,60 @@ section {
 @keyframes circleRotate {
     0% { transform: rotate(0); }
     100% { transform: rotate(360deg); }
+}
+
+/* ========================= */
+/* 🔥 MOBILE RESPONSIVE PART */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .home {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        height: auto;
+        padding-top: 150px;
+    }
+
+    .home-content {
+        max-width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 34px;
+    }
+
+    .home-content h3 {
+        font-size: 22px;
+    }
+
+    .home-img {
+        width: 280px;
+        height: 280px;
+        margin-top: 40px;
+    }
+
+    .home-img .glowing-circle::after {
+        width: 250px;
+        height: 250px;
+    }
+
+    .glowing-circle .image {
+        width: 250px;
+        height: 250px;
+    }
+
+    .image img {
+        max-width: 260px;
+    }
+
+    .navbar a {
+        margin-left: 15px;
+        font-size: 14px;
+    }
+
+    section {
+        padding: 120px 5% 60px;
+    }
 }

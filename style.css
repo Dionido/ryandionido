@@ -43,8 +43,9 @@ body {
     transition: .3s;
 }
 
-.navbar a:hover,
-.navbar a.active {
+/* ACTIVE TAB COLOR */
+.navbar a.active,
+.navbar a:hover {
     background: linear-gradient(45deg, #1b9a96, rgb(33, 84, 237));
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -54,6 +55,7 @@ body {
 section {
     min-height: 100vh;
     padding: 120px 10% 60px;
+    text-align: center;
 }
 
 /* HOME */
@@ -61,6 +63,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: left;
 }
 
 .home-content {
@@ -72,7 +75,6 @@ section {
 }
 
 .home-content h3 {
-    font-size: 28px;
     margin: 10px 0;
 }
 
@@ -80,6 +82,7 @@ section {
     margin: 20px 0;
 }
 
+/* BUTTON */
 .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -109,55 +112,6 @@ section {
     text-decoration: none;
 }
 
-/* IMAGE */
-.home-img {
-    width: 350px;
-    height: 350px;
-}
-
-.glowing-circle {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.glowing-circle span {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #1b9a96, rgb(33, 84, 237));
-    border-radius: 50%;
-    animation: rotate 5s linear infinite;
-}
-
-.glowing-circle span:nth-child(1) {
-    filter: blur(10px);
-}
-
-.image {
-    width: 300px;
-    height: 300px;
-    background: white;
-    border-radius: 50%;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* OTHER SECTIONS */
-.about, .skills, .portfolio, .contact {
-    text-align: center;
-}
-
 .skills ul {
     list-style: none;
     margin-top: 20px;
@@ -165,10 +119,4 @@ section {
 
 .skills li {
     margin: 10px 0;
-}
-
-/* ANIMATION */
-@keyframes rotate {
-    0% { transform: rotate(0); }
-    100% { transform: rotate(360deg); }
 }
